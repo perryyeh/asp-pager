@@ -1,0 +1,22 @@
+﻿------------------------------------------------
+Install:
+1.具体调用方法可以看demo的asp文档.
+2.数据库为mssql的请先执行db目录下的mssql_sp_Util_Page.sql文件添加存储过程.
+3.存储过程调用方法:
+exec sp_Util_Page 'MID,ip1,ip2,country,city','tbTempPage','1=1','mid asc','MID',4,10,440000,''
+字段,表,条件(不需要where),排序(不需要order by,需要asc和desc字符),主键,当前页数,每页记录数,记录条数(已有值:序外部赋值,0执行count),输出sql语句
+4.mssql多表关联查询解决办法：先把多表关联做视图，再把视图名当表赋值.
+5.如若需要utf-8编码，则把Cls_Pager.asp和Cls_Page.asp另存为UTF-8编码格式即可.
+
+备注：
+测试数据库未提供，因为记录太多（40多万），体积较大，需要的可问我索要：）
+
+
+Cls_Page.asp 分页类核心文件，必须
+demo_Access.asp access分页演示
+demo_MSSQL.asp  mssql分页演示
+
+几个txt都是说明文档
+
+db目录下为数据库
+pager目录下为分页导航
